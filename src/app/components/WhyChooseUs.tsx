@@ -1,0 +1,114 @@
+import { motion } from "motion/react";
+import { Target, Shield, Zap, Award } from "lucide-react";
+
+const features = [
+  {
+    icon: Target,
+    title: "ROI-Focused Solutions",
+    description: "We deliver measurable results that directly impact your business growth and revenue.",
+    gradient: "from-emerald-500 to-teal-500",
+    hoverGradient: "from-emerald-600 to-teal-600",
+  },
+  {
+    icon: Zap,
+    title: "Fast & Efficient",
+    description: "Agile development process ensuring timely delivery without compromising quality.",
+    gradient: "from-emerald-600 to-teal-600",
+    hoverGradient: "from-emerald-700 to-teal-700",
+  },
+  {
+    icon: Shield,
+    title: "Secure & Reliable",
+    description: "Enterprise-grade security and performance built into every solution we create.",
+    gradient: "from-teal-500 to-emerald-500",
+    hoverGradient: "from-teal-600 to-emerald-600",
+  },
+  {
+    icon: Award,
+    title: "Proven Excellence",
+    description: "5+ years of experience delivering successful projects across 10+ countries.",
+    gradient: "from-teal-600 to-emerald-600",
+    hoverGradient: "from-teal-700 to-emerald-700",
+  },
+];
+
+export function WhyChooseUs() {
+  return (
+    <section className="py-16 md:py-20 lg:py-24 bg-gradient-to-br from-slate-50 via-white to-emerald-50/30 relative overflow-hidden">
+      {/* Background Decorations */}
+      <div className="absolute top-0 left-0 w-96 h-96 bg-gradient-to-br from-emerald-100/40 to-teal-100/40 rounded-full blur-3xl -z-10"></div>
+      <div className="absolute bottom-0 right-0 w-96 h-96 bg-gradient-to-tr from-teal-100/40 to-cyan-100/40 rounded-full blur-3xl -z-10"></div>
+
+      <div className="container mx-auto px-4 lg:px-8">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-10 md:mb-16"
+        >
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 md:px-4 md:py-2 bg-emerald-50 border border-emerald-200 rounded-full mb-4 md:mb-6">
+            <div className="w-2 h-2 bg-gradient-to-r from-emerald-500 to-teal-500 rounded-full animate-pulse"></div>
+            <span className="text-xs md:text-sm font-semibold text-emerald-700 tracking-wide uppercase">
+              Why Choose Us
+            </span>
+          </div>
+
+          <h2 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-900 mb-4 md:mb-6 px-4">
+            Why Choose{" "}
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 to-teal-600">
+              HiveRift?
+            </span>
+          </h2>
+          <p className="text-base md:text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed px-4">
+            We combine technical expertise with strategic thinking to deliver solutions that drive real business results
+          </p>
+        </motion.div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 max-w-7xl mx-auto">
+          {features.map((feature, index) => {
+            const Icon = feature.icon;
+            return (
+              <motion.div
+                key={feature.title}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                className="group"
+              >
+                <div className="relative h-full bg-white rounded-2xl md:rounded-3xl p-6 md:p-8 border-2 border-gray-100 hover:border-emerald-200 transition-all duration-500 hover:shadow-2xl hover:shadow-emerald-500/20 hover:-translate-y-2">
+                  {/* Decorative corner accent */}
+                  <div className={`absolute top-0 right-0 w-20 h-20 md:w-24 md:h-24 bg-gradient-to-br ${feature.gradient} opacity-5 rounded-bl-full rounded-tr-2xl md:rounded-tr-3xl transition-all duration-500 group-hover:opacity-10`}></div>
+
+                  {/* Icon Container */}
+                  <div className="relative mb-4 md:mb-6">
+                    <div className={`w-16 h-16 md:w-20 md:h-20 rounded-xl md:rounded-2xl bg-gradient-to-br ${feature.gradient} flex items-center justify-center shadow-lg shadow-emerald-500/30 transition-all duration-500 group-hover:scale-110 group-hover:rotate-3 group-hover:shadow-xl group-hover:shadow-emerald-500/40`}>
+                      <Icon size={28} className="text-white md:hidden" strokeWidth={2.5} />
+                      <Icon size={36} className="text-white hidden md:block" strokeWidth={2.5} />
+                    </div>
+                    
+                    {/* Animated ring */}
+                    <div className={`absolute inset-0 w-16 h-16 md:w-20 md:h-20 rounded-xl md:rounded-2xl bg-gradient-to-br ${feature.gradient} opacity-0 group-hover:opacity-20 scale-100 group-hover:scale-125 transition-all duration-500`}></div>
+                  </div>
+
+                  {/* Content */}
+                  <h3 className="text-lg md:text-xl font-bold text-gray-900 mb-3 md:mb-4 group-hover:text-emerald-600 transition-colors duration-300">
+                    {feature.title}
+                  </h3>
+
+                  <p className="text-sm md:text-base text-gray-600 leading-relaxed">
+                    {feature.description}
+                  </p>
+
+                  {/* Bottom accent line */}
+                  <div className={`absolute bottom-0 left-0 h-1 bg-gradient-to-r ${feature.gradient} w-0 group-hover:w-full transition-all duration-500 rounded-b-2xl md:rounded-b-3xl`}></div>
+                </div>
+              </motion.div>
+            );
+          })}
+        </div>
+      </div>
+    </section>
+  );
+}
