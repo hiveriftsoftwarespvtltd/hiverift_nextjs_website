@@ -40,11 +40,11 @@ export function Header() {
           {/* Left Side: Marketing Content (Swapped) */}
           <div className="hidden md:flex items-center gap-2 text-emerald-50">
             <Rocket size={14} /> 
-            <span className="opacity-90 font-medium bold">VINEET backend, Business grow online with smart strategies</span>
+            <span className="opacity-90 font-medium bold">Helping Business grow online with smart strategies</span>
           </div>
 
           {/* Right Side: Social & Contact (Swapped) */}
-          <div className="flex items-center gap-4 md:gap-6">  
+          <div className="flex items-center gap-4 md:gap-6">
 
             {/* Follow Us Section */}
             <div className="flex items-center gap-3 border-r border-white/20 pr-4 md:pr-6">
@@ -90,7 +90,7 @@ export function Header() {
               href="/"
               className="text-gray-700 hover:text-emerald-600 hover:underline underline-offset-8 decoration-2 decoration-emerald-500/30 transition-all font-bold text-sm xl:text-base whitespace-nowrap tracking-wide"
             >
-              vineet vineet
+              Home
             </Link>
             <Link
               href="/about"
