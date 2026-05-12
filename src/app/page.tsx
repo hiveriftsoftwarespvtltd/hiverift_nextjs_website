@@ -19,7 +19,7 @@ export const metadata = {
   description: "HiveRift is a leading digital solutions provider specializing in high-performance web development, mobile apps, AI/ML, and scalable enterprise software.",
 };
 
-export default function Home() {
+export default function () {
   return (
     <div className="min-h-screen">
       <Header />
