@@ -10,7 +10,8 @@ jobs:
       - name: Deploy
         run: |
           cd /home/hiveriftmain/nextapp
-          git pull origin main
+          git fetch origin main
+          git reset --hard origin/main
           npm install
           sudo /bin/rm -rf .next
           npm run build
