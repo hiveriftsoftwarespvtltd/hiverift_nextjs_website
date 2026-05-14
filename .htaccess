@@ -1,0 +1,16 @@
+<IfModule mod_rewrite.c>
+RewriteEngine On
+
+# WordPress /blogs ko directly PHP pe bhejo
+RewriteCond %{REQUEST_URI} ^/blogs [NC]
+RewriteRule ^ - [L]
+
+# Baaki sab Next.js index.html pe
+RewriteBase /
+RewriteRule ^index\.html$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-l
+RewriteRule . /index.html [L]
+
+</IfModule>

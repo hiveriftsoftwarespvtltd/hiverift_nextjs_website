@@ -5,6 +5,18 @@ const nextConfig: NextConfig = {
     "*.trycloudflare.com",
     "*.loca.lt",
   ],
+
+  // WordPress /blogs ko bypass karo
+  async rewrites() {
+    return {
+      fallback: [
+        {
+          source: '/blogs/:path*',
+          destination: '/blogs/:path*',
+        },
+      ],
+    };
+  },
 };
 
 export default nextConfig;
